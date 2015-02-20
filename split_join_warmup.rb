@@ -10,30 +10,54 @@ world_cup_news
 
 # enter your solutions inside the methods
 def goal(goal_message)
-
+goal_message*2
+#alt answers
+#goal_message + goal_message
+# "#{goal_message}#{goal_message}"
 end
 
 def generate_an_array_of_teams(team_list)
-
+team_list.split(", ")
 end
 
 def number_of_teams(team_list)
-
+team_list.split(", ").count
+#team_list.split(", ").length
+#team_list.split(", ").size
 end
 
 def return_australia(team_list)
-
+  x = team_list.split(", ")
+  x[6]
+  # team_list.scan("Australia").join("")
+  # team_list.scan("Australia").first
 end
 
 def starts_with_C(team_list)
+  team_list.split(", ").select{|country| country.include?("C")}
 
+  #team_list.split(", ").select {|country| country[0] =="C"}
+  #team_list.split(", ").select {|country| country.first =="C"}
 end
 
 def block_string_to_single_line(long_string)
-
+  long_string.tr("\n", " ").split(", ").join(* *).strip
+  # long_string.split(",").join("").gsub("\n, " ").strip
+  # long_strip.gsub(/,/,"").gsub(/\n/, " ").strip
 end
 
 def capitalize_every_third_word(long_string)
+  # third = long_string.chomp.gsub("\n", " ").downcase.split(", ")
+  # stuff = []
+  # third.each_with_index do |x, i|
+  #   if i == 0 || i % 3 == 0
+  #       stuff[i] = x.capitalize!
+  #     end
+  #     stuff[i] = x
+  #   end
+  #   return stuff = stuff.join(" ")
+
+  block_string_to_single_line(long_string.downcase).split.each_slice(3), flat_map{}|a,b,c| [a.capitalize, b,c]}.join(' ')
 
 end
 
